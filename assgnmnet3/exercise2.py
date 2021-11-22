@@ -40,8 +40,9 @@ def ex2_a():
     r1_List_NPArray_T = np.asarray(r1_List).T
     r2_List_NPArray_T = np.asarray(r2_List).T
 
-    plt.scatter(r1_List_NPArray_T[0], r1_List_NPArray_T[1])
-    plt.scatter(r2_List_NPArray_T[0], r2_List_NPArray_T[1])
+    plt.scatter(r1_List_NPArray_T[0], r1_List_NPArray_T[1],label = "r1_list")
+    plt.scatter(r2_List_NPArray_T[0], r2_List_NPArray_T[1],label = "r2_list")
+    plt.legend()
     plt.axis('equal')
     plt.show()
 
@@ -96,8 +97,6 @@ def ex2_b():
         r2 = r2 + (alpha / 1000) * d2
         r1_List.append((r1[0], r1[1]))
         r2_List.append((r2[0], r2[1]))
-    r1_List_NPArray_T = np.asarray(r1_List).T
-    r2_List_NPArray_T = np.asarray(r2_List).T
     closer_r1_cluster_a_transposed= np.asarray(closer_r1_cluster_a).T
     closer_r1_cluster_b_transposed= np.asarray(closer_r1_cluster_b).T
     closer_r2_cluster_a_transposed= np.asarray(closer_r2_cluster_a).T
@@ -115,9 +114,9 @@ def ex2_b():
     plt.scatter(r1[0],r1[1],label="R1")
     plt.scatter(r2[0],r2[1],label="R2")
 
-    plt.legend()
+    plt.legend(loc=2, prop={'size': 6})
     plt.axis('equal')
-    plt.show()
+    #plt.show()
 
 def ex2_c():
     number_of_experiments = 9
@@ -130,4 +129,6 @@ def ex2_c():
 
 
 if __name__ == '__main__':
+    #ex2_a()
+    #ex2_b()
     ex2_c()
